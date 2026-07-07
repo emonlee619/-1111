@@ -1,0 +1,126 @@
+<!doctype html>
+<!-- Created by pdf2htmlEX (https://github.com/coolwanglu/pdf2htmlex) -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta name="generator" content="pdf2htmlEX">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阅读-GB50471-2008：煤矿瓦斯抽采工程设计规范</title>
+  <script>
+var bookid_var=56433;
+var absolute_path_prefix="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/";
+var branchName="";//机构用户名
+var branchMemberName="";//登陆用户名
+var watermark=""; //水印标记
+var abolishImage="https://ebook.chinabuilding.com.cn/pdf/resources/images/abolish.png";//废止标图片路径（绝对路径） 不一定有
+var resourceImage="";//资源所属方图片路径（绝对路径） 不一定有
+var siteURL_var="https://ebook.chinabuilding.com.cn/";
+var memberislogin="0";
+</script>
+  <script src="https://ebook.chinabuilding.com.cn/pdf/jquery-1.12.4.min.js"></script>
+  <script src="https://ebook.chinabuilding.com.cn/pdf/resources/layer3/layer-modified.js"></script>
+  <script src="https://ebook.chinabuilding.com.cn/pdf/jquery.mousewheel.js"></script>
+  <!--[if lt IE 8]>
+<script>
+    $(function(){
+        $("body").addClass("lessIE8").html('<div class="IEWarnWrap"><h1>本图书不支持IE8以下浏览器及IE兼容性视图浏览</h1><h2>推荐使用以下浏览器获得更好阅读体验</h2><div class="browser_list"><span><a href="https://www.google.cn/intl/zh-CN/chrome/" target="_blank"><img src="/pdf/resources/images/chrome.png">chrome</a></span><span><a href="http://www.firefox.com.cn/download/" target="_blank"><img src="/pdf/resources/images/firefox.png">firefox</a></span><span><a href="http://www.apple.com/cn/safari/" target="_blank"><img src="/pdf/resources/images/safari.png">safari</a></span><span><a href="https://www.microsoft.com/zh-cn/windows/microsoft-edge" target="_blank"><img src="/pdf/resources/images/ie.png">ie9及以上</a></span></div></div>');
+    });
+</script>
+<![endif]-->
+  <!--[if lte IE 9]>
+<script src="/pdf/aight.js"></script>
+<![endif]-->
+  <script src="https://ebook.chinabuilding.com.cn/pdf/compatibility.js"></script>
+  <script src="https://ebook.chinabuilding.com.cn/pdf/pdf2htmlEX.js?1.0.3"></script>
+  <style>
+	._1{width:10px!important;}
+	._._1{width:0px!important;}
+</style>
+  <link rel="stylesheet" href="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/base.min.css">
+  <link rel="stylesheet" href="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/fancy.min.css">
+  <link rel="stylesheet" href="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut).css">
+ </head>
+ <body>
+  <div id="sidebar">
+   <div id="outline">
+    <ul>
+     <li><a title="1 总则" class="l" href="#pf8" data-dest-detail="[8,&quot;Fit&quot;]">1 总则</a></li>
+     <li><a title="2 术语" class="l" href="#pf9" data-dest-detail="[9,&quot;Fit&quot;]">2 术语</a></li>
+     <li><a title="3 建立矿井瓦斯抽采系统的条件及抽采系统选择" class="l" href="#pfc" data-dest-detail="[12,&quot;Fit&quot;]">3 建立矿井瓦斯抽采系统的条件及抽采系统选择</a></li>
+     <li><a title="3.1 建立矿井瓦斯抽采系统的条件" class="l" href="#pfc" data-dest-detail="[12,&quot;Fit&quot;]">3.1 建立矿井瓦斯抽采系统的条件</a></li>
+     <li><a title="4 瓦斯抽采设计参数" class="l" href="#pfe" data-dest-detail="[14,&quot;Fit&quot;]">4 瓦斯抽采设计参数</a></li>
+     <li><a title="5 瓦斯抽采方法" class="l" href="#pf10" data-dest-detail="[16,&quot;Fit&quot;]">5 瓦斯抽采方法</a></li>
+     <li><a title="5.1 一般规定" class="l" href="#pf10" data-dest-detail="[16,&quot;Fit&quot;]">5.1 一般规定</a></li>
+     <li><a title="5.2 瓦斯抽采方法选择" class="l" href="#pf10" data-dest-detail="[16,&quot;Fit&quot;]">5.2 瓦斯抽采方法选择</a></li>
+     <li><a title="5.3 专用瓦斯抽采巷道" class="l" href="#pf11" data-dest-detail="[17,&quot;Fit&quot;]">5.3 专用瓦斯抽采巷道</a></li>
+     <li><a title="5.4 钻场及钻孔布置" class="l" href="#pf12" data-dest-detail="[18,&quot;Fit&quot;]">5.4 钻场及钻孔布置</a></li>
+     <li><a title="5.5 封孔" class="l" href="#pf13" data-dest-detail="[19,&quot;Fit&quot;]">5.5 封孔</a></li>
+     <li><a title="5.6 地面钻孔" class="l" href="#pf13" data-dest-detail="[19,&quot;Fit&quot;]">5.6 地面钻孔</a></li>
+     <li><a title="6 抽采管路系统选择、计算及抽采设备选型" class="l" href="#pf16" data-dest-detail="[22,&quot;Fit&quot;]">6 抽采管路系统选择、计算及抽采设备选型</a></li>
+     <li><a title="6.1 抽采管路系统选择的原则" class="l" href="#pf16" data-dest-detail="[22,&quot;Fit&quot;]">6.1 抽采管路系统选择的原则</a></li>
+     <li><a title="6.2 抽采管路管径、壁厚计算及管材选择" class="l" href="#pf16" data-dest-detail="[22,&quot;Fit&quot;]">6.2 抽采管路管径、壁厚计算及管材选择</a></li>
+     <li><a title="6.3 管路阻力计算" class="l" href="#pf17" data-dest-detail="[23,&quot;Fit&quot;]">6.3 管路阻力计算</a></li>
+     <li><a title="6.4 管路布置及敷设" class="l" href="#pf18" data-dest-detail="[24,&quot;Fit&quot;]">6.4 管路布置及敷设</a></li>
+     <li><a title="6.5 抽采附属装置及设施" class="l" href="#pf19" data-dest-detail="[25,&quot;Fit&quot;]">6.5 抽采附属装置及设施</a></li>
+     <li><a title="6.6 抽采设备选型" class="l" href="#pf19" data-dest-detail="[25,&quot;Fit&quot;]">6.6 抽采设备选型</a></li>
+     <li><a title="7 瓦斯抽采泵站" class="l" href="#pf1c" data-dest-detail="[28,&quot;Fit&quot;]">7 瓦斯抽采泵站</a></li>
+     <li><a title="7.1 地面固定瓦斯抽采泵站" class="l" href="#pf1c" data-dest-detail="[28,&quot;Fit&quot;]">7.1 地面固定瓦斯抽采泵站</a></li>
+     <li><a title="7.2 井下固定瓦斯抽采泵站" class="l" href="#pf1d" data-dest-detail="[29,&quot;Fit&quot;]">7.2 井下固定瓦斯抽采泵站</a></li>
+     <li><a title="7.3 井下移动瓦斯抽采泵站" class="l" href="#pf1e" data-dest-detail="[30,&quot;Fit&quot;]">7.3 井下移动瓦斯抽采泵站</a></li>
+     <li><a title="8 安全与监控" class="l" href="#pf1f" data-dest-detail="[31,&quot;Fit&quot;]">8 安全与监控</a></li>
+     <li><a title="8.1 安全设施及措施" class="l" href="#pf1f" data-dest-detail="[31,&quot;Fit&quot;]">8.1 安全设施及措施</a></li>
+     <li><a title="8.2 矿井瓦斯抽采监测监控系统" class="l" href="#pf1f" data-dest-detail="[31,&quot;Fit&quot;]">8.2 矿井瓦斯抽采监测监控系统</a></li>
+     <li><a title="附录A 煤层瓦斯抽采难易程度分类" class="l" href="#pf21" data-dest-detail="[33,&quot;Fit&quot;]">附录A 煤层瓦斯抽采难易程度分类</a></li>
+     <li><a title="本规范用词说明" class="l" href="#pf22" data-dest-detail="[34,&quot;Fit&quot;]">本规范用词说明</a></li>
+    </ul>
+   </div>
+  </div>
+  <div id="page-container">
+   <div id="pf1" class="pf w0 h0" data-page-no="1" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)1.page"></div>
+   <div id="pf2" class="pf w0 h0" data-page-no="2" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)2.page"></div>
+   <div id="pf3" class="pf w2 h14" data-page-no="3" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)3.page"></div>
+   <div id="pf4" class="pf w2 h14" data-page-no="4" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)4.page"></div>
+   <div id="pf5" class="pf w2 h14" data-page-no="5" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)5.page"></div>
+   <div id="pf6" class="pf w2 h14" data-page-no="6" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)6.page"></div>
+   <div id="pf7" class="pf w2 h14" data-page-no="7" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)7.page"></div>
+   <div id="pf8" class="pf w2 h14" data-page-no="8" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)8.page"></div>
+   <div id="pf9" class="pf w2 h14" data-page-no="9" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)9.page"></div>
+   <div id="pfa" class="pf w2 h14" data-page-no="a" data-page-url="https://ebook.chinabuilding.com.cn/iPadresource/2014-07/2014041014221220486/GB50471-2008(cut)10.page"></div>
+  </div>
+  <div class="loading-indicator">
+   <img alt="" src="https://ebook.chinabuilding.com.cn/pdf/pdf2htmlEX-64x64.png">
+  </div>
+  <div id="line-resize"></div>
+  <div id="slideNav">
+   <i class="iconfont icon-left"></i>
+  </div>
+  <div class="func-tools">
+   <span id="page-prev" title="上一页" class="tool-btn"><i class="iconfont icon-up"></i></span>
+   <span id="page-next" title="下一页" class="tool-btn"><i class="iconfont icon-down"></i></span>
+   <span id="readModel-btn" title="阅读模式" class="tool-btn"><i class="iconfont icon-readmodel22"></i>
+    <ul class="subTools readModelList">
+     <li id="readmodel-singlepage" class="active" title="单页"><i class="iconfont icon-yemian"></i></li>
+     <li id="readmodel-default" title="连页"><i class="iconfont icon-pageseries"></i></li>
+    </ul></span>
+   <span id="plane-btn" title="页码跳转" class="tool-btn"><i class="iconfont icon-skip"></i></span>
+   <span id="search-btn" title="内文检索" class="tool-btn"><i class="iconfont icon-search"></i></span>
+   <span id="zoom-btn" title="页面缩放" class="tool-btn"><i class="iconfont icon-searchPlus"></i></span>
+   <span id="bookmark-btn" title="书签管理" class="tool-btn"><i class="iconfont icon-bookmark"></i></span>
+   <span id="notes-btn" title="笔记标注" class="tool-btn"><i class="iconfont icon-writeNote2"></i></span>
+   <span id="highlight-btn" title="高亮标注" class="tool-btn"><i class="iconfont icon-brush"></i></span>
+   <span id="print-btn" title="打印" class="tool-btn"><i class="iconfont icon-print"></i></span>
+   <span id="viewerFit-btn" title="视图模式" class="tool-btn"><i class="iconfont icon-viewmodel"></i>
+    <ul class="subTools viewerList">
+     <li id="viewerFit-actual" title="实际大小"><i class="iconfont icon-actualSize font-bold"></i></li>
+     <li id="viewerFit-width" title="适应宽度"><i class="iconfont icon-fitwidth"></i></li>
+     <li id="viewerFit-height" title="适应高度"><i class="iconfont icon-fitheight"></i></li>
+    </ul></span>
+   <span id="screen-btn" title="单击全屏" class="tool-btn"><i class="iconfont icon-fullscreen"></i></span>
+  </div>
+  <script src="https://ebook.chinabuilding.com.cn/zbooklib/stat/front/stat.js" type="text/javascript"></script>
+  <script>
+if(window._zcms_stat)_zcms_stat("SiteID=1&Dest=https://ebook.chinabuilding.com.cn/zbooklib/stat/dealer");
+</script>
+  <!-- App=ZBOOKLIB(国标电子书库) 2.4.27378,CostTime=3,PublishDate=2026-07-07 17:45:07 -->
+ </body>
+</html>

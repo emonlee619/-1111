@@ -1,0 +1,12 @@
+fastapi==0.138.2
+uvicorn==0.49.0
+pydantic==2.13.4
+torch==2.6.0
+torch-geometric==2.8.0
+pandas==2.2.3
+numpy==2.5.0
+scikit-learn==1.5.2
+scipy==1.16.3
+openpyxl==3.1.5
+python-dateutil==2.9.0.post0
+APScheduler==3.11.2

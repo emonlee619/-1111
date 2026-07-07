@@ -1,0 +1,1456 @@
+[
+  {
+    "sensorId": "S-CH4-001",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面上隅角",
+    "anchorId": "working-face-upper-corner",
+    "relatedHandles": [
+      "2AA3",
+      "263E",
+      "26A0"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-002",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面工作面",
+    "anchorId": "working-face-mid",
+    "relatedHandles": [
+      "2AA3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-003",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面回风",
+    "anchorId": "return-airway-near-face",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-004",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面切眼侧",
+    "anchorId": "setup-entry-cut-eye",
+    "relatedHandles": [
+      "2A76",
+      "2B2D",
+      "2B55"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-005",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面进风侧",
+    "anchorId": "intake-side-near-face",
+    "relatedHandles": [
+      "26A6",
+      "266E",
+      "26C7"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-006",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面回风高位钻机",
+    "anchorId": "return-high-drill-rig",
+    "relatedHandles": [
+      "2A7B",
+      "2603",
+      "2608",
+      "2611",
+      "2615"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "low_confidence_pending",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "low_confidence_pending"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-007",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面回风埋管管道",
+    "anchorId": "return-buried-pipe",
+    "relatedHandles": [
+      "260D",
+      "2608",
+      "2603",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-008",
+    "metricName": "甲烷",
+    "unit": "%",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CO-001",
+    "metricName": "一氧化碳",
+    "unit": "ppm",
+    "originalLocation": "采面回风",
+    "anchorId": "return-airway-near-face",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CO2-001",
+    "metricName": "二氧化碳",
+    "unit": "%",
+    "originalLocation": "面回风巷避险硐室",
+    "anchorId": "return-refuge-chamber",
+    "relatedHandles": [
+      "26A6",
+      "2A76"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "low_confidence_pending",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "low_confidence_pending"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-TEMP-001",
+    "metricName": "温度",
+    "unit": "°C",
+    "originalLocation": "采面回风",
+    "anchorId": "return-airway-near-face",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-TEMP-002",
+    "metricName": "温度",
+    "unit": "°C",
+    "originalLocation": "采面回风埋管管道",
+    "anchorId": "return-buried-pipe",
+    "relatedHandles": [
+      "260D",
+      "2608",
+      "2603",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-TEMP-003",
+    "metricName": "温度",
+    "unit": "°C",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AIRSPD-001",
+    "metricName": "风速",
+    "unit": "m/s",
+    "originalLocation": "采面回风",
+    "anchorId": "return-airway-near-face",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-O2-001",
+    "metricName": "氧气",
+    "unit": "%",
+    "originalLocation": "采面",
+    "anchorId": "working-face-mid",
+    "relatedHandles": [
+      "2AA3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-PRESS-001",
+    "metricName": "压力",
+    "unit": "kPa",
+    "originalLocation": "采面回风埋管管道",
+    "anchorId": "return-buried-pipe",
+    "relatedHandles": [
+      "260D",
+      "2608",
+      "2603",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-PRESS-002",
+    "metricName": "压力",
+    "unit": "kPa",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DUST-001",
+    "metricName": "粉尘",
+    "unit": "mg/m³",
+    "originalLocation": "采面",
+    "anchorId": "working-face-mid",
+    "relatedHandles": [
+      "2AA3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AIRDIR-001",
+    "metricName": "风向",
+    "unit": "°",
+    "originalLocation": "采面",
+    "anchorId": "working-face-mid",
+    "relatedHandles": [
+      "2AA3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-FLOW-001",
+    "metricName": "流量",
+    "unit": "m³/min",
+    "originalLocation": "采面回风埋管管",
+    "anchorId": "return-buried-pipe",
+    "relatedHandles": [
+      "260D",
+      "2608",
+      "2603",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-FLOW-002",
+    "metricName": "流量",
+    "unit": "m³/min",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DRILL-S-001",
+    "metricName": "钻屑量 (S)",
+    "unit": "待确认",
+    "originalLocation": "采面煤壁前方 预测钻孔（软分层内，孔深8~10m，距煤壁5m）",
+    "anchorId": "prediction-borehole-5m",
+    "relatedHandles": [
+      "2AA3",
+      "2698",
+      "269C"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DRILL-S-002",
+    "metricName": "钻屑量 (S)",
+    "unit": "kg/m",
+    "originalLocation": "采面煤壁前方 预测钻孔（软分层内，孔深8~10m，距煤壁10m）",
+    "anchorId": "prediction-borehole-10m",
+    "relatedHandles": [
+      "2AA3",
+      "2698",
+      "269C"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DEF-001",
+    "metricName": "巷道围岩变形量",
+    "unit": "mm",
+    "originalLocation": "运输巷超前支护段0~20m（顶板）",
+    "anchorId": "transport-advance-0-20-roof",
+    "relatedHandles": [
+      "2A76",
+      "2B2D",
+      "2B55"
+    ],
+    "confidence": "inferred_from_named_risk_marker",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "deformation",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DEF-002",
+    "metricName": "巷道围岩变形量",
+    "unit": "mm",
+    "originalLocation": "运输巷超前支护段20~50m（顶板）",
+    "anchorId": "transport-advance-20-50-roof",
+    "relatedHandles": [
+      "26A6"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "deformation",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DEF-003",
+    "metricName": "巷道围岩变形量",
+    "unit": "mm",
+    "originalLocation": "运输巷超前支护段0~20m（两帮）",
+    "anchorId": "transport-advance-0-20-ribs",
+    "relatedHandles": [
+      "26A6",
+      "2666",
+      "26D3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "deformation",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-DEF-004",
+    "metricName": "巷道围岩变形量",
+    "unit": "mm",
+    "originalLocation": "回风巷超前支护段0~20m（两帮）",
+    "anchorId": "return-advance-0-20-ribs",
+    "relatedHandles": [
+      "2AA3",
+      "265E",
+      "26AB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "deformation",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-GASP-001",
+    "metricName": "煤层原始瓦斯压力",
+    "unit": "MPa",
+    "originalLocation": "运输巷原始煤体测压孔（距工作面>100m）",
+    "anchorId": "transport-pressure-hole",
+    "relatedHandles": [
+      "26A6",
+      "26CB",
+      "2676"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-GASP-002",
+    "metricName": "煤层原始瓦斯压力",
+    "unit": "MPa",
+    "originalLocation": "回风巷原始煤体测压孔（距工作面>100m）",
+    "anchorId": "return-pressure-hole",
+    "relatedHandles": [
+      "2AA3",
+      "264C",
+      "26B3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-GASP-003",
+    "metricName": "煤层原始瓦斯压力",
+    "unit": "MPa",
+    "originalLocation": "地质构造异常区测压孔",
+    "anchorId": "geological-anomaly-pressure-hole",
+    "relatedHandles": [
+      "2AA3",
+      "263E",
+      "26A0"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-GASP-TREND-001",
+    "metricName": "煤层瓦斯压力波动趋势",
+    "unit": "MPa/h",
+    "originalLocation": "运输巷原始煤体测压孔（距工作面>100m）",
+    "anchorId": "transport-pressure-hole",
+    "relatedHandles": [
+      "26A6",
+      "26CB",
+      "2676"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-GASP-TREND-002",
+    "metricName": "煤层瓦斯压力波动趋势",
+    "unit": "MPa/h",
+    "originalLocation": "回风巷原始煤体测压孔（距工作面>100m）",
+    "anchorId": "return-pressure-hole",
+    "relatedHandles": [
+      "2AA3",
+      "264C",
+      "26B3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-GASP-TREND-003",
+    "metricName": "煤层瓦斯压力波动趋势",
+    "unit": "MPa/h",
+    "originalLocation": "地质构造异常区测压孔",
+    "anchorId": "geological-anomaly-pressure-hole",
+    "relatedHandles": [
+      "2AA3",
+      "263E",
+      "26A0"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-Q-001",
+    "metricName": "钻孔瓦斯涌出初速度 (q)",
+    "unit": "L/min",
+    "originalLocation": "采面煤壁前方 预测钻孔（软分层内，孔深8~10m，封孔后测量）",
+    "anchorId": "prediction-borehole-5m",
+    "relatedHandles": [
+      "2AA3",
+      "2698",
+      "269C"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-K1-001",
+    "metricName": "钻屑瓦斯解吸指标 (K₁)",
+    "unit": "mL/(g·min^0.5)",
+    "originalLocation": "采面煤壁前方 预测钻孔（取钻屑后立即装入解吸仪测量）",
+    "anchorId": "prediction-borehole-5m",
+    "relatedHandles": [
+      "2AA3",
+      "2698",
+      "269C"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-CH4-RATE-001",
+    "metricName": "瓦斯浓度变化率",
+    "unit": "%/min",
+    "originalLocation": "采面回风",
+    "anchorId": "return-airway-near-face",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-CH4-RATE-002",
+    "metricName": "瓦斯浓度变化率",
+    "unit": "%/min",
+    "originalLocation": "采面上隅角",
+    "anchorId": "working-face-upper-corner",
+    "relatedHandles": [
+      "2AA3",
+      "263E",
+      "26A0"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "ventilation_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "ventilation_gas",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-CH4-RATE-003",
+    "metricName": "瓦斯浓度变化率",
+    "unit": "%/min",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-GAS-FLOW-K-001",
+    "metricName": "瓦斯涌出量波动系数",
+    "unit": "dimensionless",
+    "originalLocation": "采面回风管道",
+    "anchorId": "return-pipe",
+    "relatedHandles": [
+      "2615",
+      "2611",
+      "2A7B"
+    ],
+    "confidence": "inferred_from_pipe_handles",
+    "displayLayer": "pipe_3d",
+    "frontendPlacement": [
+      "/twin/tunnel",
+      "/twin/sensors",
+      "/twin/risk-heatmap"
+    ],
+    "category": "pipe",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-COAL-TEMP-001",
+    "metricName": "煤体内部温度变化",
+    "unit": "°C",
+    "originalLocation": "采面煤壁前方 钻孔内",
+    "anchorId": "prediction-borehole-5m",
+    "relatedHandles": [
+      "2AA3",
+      "2698",
+      "269C"
+    ],
+    "confidence": "inferred_from_existing_mock_anchor",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-EMR-I-001",
+    "metricName": "电磁辐射强度",
+    "unit": "mV",
+    "originalLocation": "工作面煤壁前方5m（移动测点1）",
+    "anchorId": "emr-mobile-5m",
+    "relatedHandles": [
+      "2AA3",
+      "26B7",
+      "26BB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-EMR-I-002",
+    "metricName": "电磁辐射强度",
+    "unit": "mV",
+    "originalLocation": "工作面煤壁前方10m（移动测点2）",
+    "anchorId": "emr-mobile-10m",
+    "relatedHandles": [
+      "2AA3",
+      "264C",
+      "26B3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-EMR-P-001",
+    "metricName": "电磁辐射脉冲数",
+    "unit": "count",
+    "originalLocation": "工作面煤壁前方5m（移动测点3）",
+    "anchorId": "emr-mobile-5m",
+    "relatedHandles": [
+      "2AA3",
+      "26B7",
+      "26BB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-EMR-P-002",
+    "metricName": "电磁辐射脉冲数",
+    "unit": "count",
+    "originalLocation": "工作面煤壁前方10m（移动测点4）",
+    "anchorId": "emr-mobile-10m",
+    "relatedHandles": [
+      "2AA3",
+      "264C",
+      "26B3"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "borehole_pressure",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AE-RATE-001",
+    "metricName": "声发射事件率",
+    "unit": "events/min",
+    "originalLocation": "运输巷底板钻孔（深度5m）",
+    "anchorId": "transport-floor-borehole",
+    "relatedHandles": [
+      "26A6",
+      "2672",
+      "26BF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-AE-RATE-002",
+    "metricName": "声发射事件率",
+    "unit": "events/min",
+    "originalLocation": "回风巷底板钻孔（深度5m）",
+    "anchorId": "return-floor-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": false,
+    "isDerivedMetric": true,
+    "derivedFrom": [
+      "??????",
+      "???????"
+    ]
+  },
+  {
+    "sensorId": "S-AE-DA12-001",
+    "metricName": "声发射12h偏差值（DA）",
+    "unit": "dimensionless",
+    "originalLocation": "运输巷底板钻孔（深度5m）",
+    "anchorId": "transport-floor-borehole",
+    "relatedHandles": [
+      "26A6",
+      "2672",
+      "26BF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AE-DA13-001",
+    "metricName": "声发射13h偏差值（DA）",
+    "unit": "dimensionless",
+    "originalLocation": "回风巷底板钻孔（深度5m）",
+    "anchorId": "return-floor-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AE-N-001",
+    "metricName": "声发射异常频次（N）",
+    "unit": "count",
+    "originalLocation": "运输巷底板钻孔（深度5m）",
+    "anchorId": "transport-floor-borehole",
+    "relatedHandles": [
+      "26A6",
+      "2672",
+      "26BF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-AE-N-002",
+    "metricName": "声发射异常频次（N）",
+    "unit": "count",
+    "originalLocation": "回风巷底板钻孔（深度5m）",
+    "anchorId": "return-floor-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265A",
+      "26AF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "acoustic_emission",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-FREQ-001",
+    "metricName": "微震事件频次",
+    "unit": "events/h",
+    "originalLocation": "运输巷顶板钻孔（深度3m）",
+    "anchorId": "transport-roof-borehole",
+    "relatedHandles": [
+      "2A76",
+      "2B2D",
+      "26CF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-FREQ-002",
+    "metricName": "微震事件频次",
+    "unit": "events/h",
+    "originalLocation": "回风巷顶板钻孔（深度3m）",
+    "anchorId": "return-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265E",
+      "26AB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-FREQ-003",
+    "metricName": "微震事件频次",
+    "unit": "events/h",
+    "originalLocation": "切眼两端顶板钻孔",
+    "anchorId": "setup-entry-cut-eye-roof",
+    "relatedHandles": [
+      "2A7B",
+      "2603",
+      "2611"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-FREQ-004",
+    "metricName": "微震事件频次",
+    "unit": "events/h",
+    "originalLocation": "采空区侧巷道顶板钻孔",
+    "anchorId": "gob-side-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "261A",
+      "261E",
+      "2622"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-ENERGY-001",
+    "metricName": "微震事件能量",
+    "unit": "J",
+    "originalLocation": "运输巷顶板钻孔（深度3m）",
+    "anchorId": "transport-roof-borehole",
+    "relatedHandles": [
+      "2A76",
+      "2B2D",
+      "26CF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-ENERGY-002",
+    "metricName": "微震事件能量",
+    "unit": "J",
+    "originalLocation": "回风巷顶板钻孔（深度3m）",
+    "anchorId": "return-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265E",
+      "26AB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-ENERGY-003",
+    "metricName": "微震事件能量",
+    "unit": "J",
+    "originalLocation": "切眼两端顶板钻孔",
+    "anchorId": "setup-entry-cut-eye-roof",
+    "relatedHandles": [
+      "2A7B",
+      "2603",
+      "2611"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-ENERGY-004",
+    "metricName": "微震事件能量",
+    "unit": "J",
+    "originalLocation": "采空区侧巷道顶板钻孔",
+    "anchorId": "gob-side-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "261A",
+      "261E",
+      "2622"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-B-001",
+    "metricName": "微震 b 值",
+    "unit": "dimensionless",
+    "originalLocation": "运输巷顶板钻孔（深度3m）",
+    "anchorId": "transport-roof-borehole",
+    "relatedHandles": [
+      "2A76",
+      "2B2D",
+      "26CF"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-B-002",
+    "metricName": "微震 b 值",
+    "unit": "dimensionless",
+    "originalLocation": "回风巷顶板钻孔（深度3m）",
+    "anchorId": "return-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "265E",
+      "26AB"
+    ],
+    "confidence": "inferred_from_geometry",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-B-003",
+    "metricName": "微震 b 值",
+    "unit": "dimensionless",
+    "originalLocation": "切眼两端顶板钻孔",
+    "anchorId": "setup-entry-cut-eye-roof",
+    "relatedHandles": [
+      "2A7B",
+      "2603",
+      "2611"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  },
+  {
+    "sensorId": "S-MS-B-004",
+    "metricName": "微震 b 值",
+    "unit": "dimensionless",
+    "originalLocation": "采空区侧巷道顶板钻孔",
+    "anchorId": "gob-side-roof-borehole",
+    "relatedHandles": [
+      "2AA3",
+      "261A",
+      "261E",
+      "2622"
+    ],
+    "confidence": "low_confidence_pending",
+    "displayLayer": "model_extension_required",
+    "frontendPlacement": [
+      "/twin/sensors",
+      "/twin/risk-heatmap",
+      "/data/features",
+      "low_confidence_pending"
+    ],
+    "category": "microseismic",
+    "isPhysicalSensor": true,
+    "isDerivedMetric": false,
+    "derivedFrom": []
+  }
+]

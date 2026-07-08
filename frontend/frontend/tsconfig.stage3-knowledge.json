@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "src/lib/supabase/server.ts",
+    "src/lib/knowledge/**/*.ts",
+    "src/app/api/knowledge/**/*.ts",
+    "src/components/knowledge/KnowledgeStage3Client.tsx",
+    "src/app/knowledge/page.tsx",
+    "src/app/knowledge/search/page.tsx",
+    "src/app/knowledge/graph/page.tsx",
+    "src/app/knowledge/ask/page.tsx",
+    "src/app/knowledge/cards/[cardCode]/page.tsx",
+    "src/app/knowledge/admin/page.tsx",
+    "src/app/knowledge/review/page.tsx",
+    "src/app/reports/generate/page.tsx"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "incremental": false
+  }
+}

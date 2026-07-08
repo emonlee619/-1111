@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "src/lib/cn.ts",
+    "src/lib/kbSupabaseRest.ts",
+    "src/lib/knowledgeApi.ts",
+    "src/app/api/kb/[...path]/route.ts",
+    "src/app/knowledge/center/page.tsx",
+    "src/components/knowledge/KnowledgeCenterClient.tsx"
+  ],
+  "exclude": ["node_modules"]
+}

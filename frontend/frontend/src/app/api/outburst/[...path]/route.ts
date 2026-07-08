@@ -188,8 +188,29 @@ async function adaptWarnings(req: NextRequest): Promise<Response> {
 
 async function adaptLatestWarning(): Promise<Response> {
   const body = await fetchUpstreamJson("/warnings/latest");
-  if (isRecord(body) && body.success === false && body.upstreamStatus) {
-    return noStoreJson(body, { status: Number(body.upstreamStatus) || 404 });
+  if (isRecord(body) && body.success === false) {
+    if (body.upstreamStatus === 404) {
+      return noStoreJson({
+        id: 0,
+        event_id: "NO-LATEST",
+        timestamp: new Date().toISOString(),
+        mine_id: "M001",
+        dynamic_risk: 0,
+        static_risk: 0,
+        combined_risk: 0,
+        risk_level: "未分级",
+        risk_level_code: "low",
+        sensor_contribution: [],
+        heatmap_data: [],
+        event_status: "empty",
+        confirm_status: "无数据",
+        summary: "暂无预警记录",
+        disposal_records: [],
+        advice: [],
+        tracing_entry: "",
+      });
+    }
+    return noStoreJson(body, { status: Number(body.upstreamStatus) || 500 });
   }
   return noStoreJson(normalizeWarning(body));
 }
@@ -244,6 +265,24 @@ async function adaptLatestSensors(): Promise<Response> {
   return noStoreJson({ sensors: normalized, count: normalized.length, source: "sensors/latest" });
 }
 
+async function adaptMeta(): Promise<Response> {
+  const body = await fetchUpstreamJson("/meta");
+  const meta = isRecord(body) && Array.isArray(body.meta) ? body.meta.filter(isRecord) : [];
+  
+  const normalized = meta.map((item) => ({
+    ...item,
+    sensor_id: normalizeSensorId(String(item.sensor_id ?? "")),
+  }));
+  
+  return noStoreJson({ sensors: normalized, count: normalized.length, source: "meta" });
+}
+
+async function adaptConfig(): Promise<Response> {
+  const body = await fetchUpstreamJson("/config");
+  const configs = isRecord(body) && Array.isArray(body.configs) ? body.configs.filter(isRecord) : [];
+  return noStoreJson({ config: configs, count: configs.length, source: "config" });
+}
+
 async function adaptSensorSeries(req: NextRequest): Promise<Response> {
   const params = req.nextUrl.searchParams;
   const limit = params.get("limit") ?? "240";
@@ -282,6 +321,8 @@ async function adaptSensorSeries(req: NextRequest): Promise<Response> {
 async function adaptReadOnly(req: NextRequest, pathSegments: string[]): Promise<Response | undefined> {
   const key = pathKey(pathSegments);
   if (key === "sensors/latest") return adaptLatestSensors();
+  if (key === "meta") return adaptMeta();
+  if (key === "config") return adaptConfig();
   if (key === "sensor-data/series") return adaptSensorSeries(req);
   if (key === "warnings") return adaptWarnings(req);
   if (key === "warnings/latest") return adaptLatestWarning();

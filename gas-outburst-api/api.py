@@ -46,6 +46,7 @@ scheduler = BackgroundScheduler()
 is_auto_running = False
 current_cycle_index = 0
 total_cycles = 0
+data_cursor = 0
 
 DB_PATH = API_DIR / 'outburst_warning.db'
 GAS_OUTBURST_DB_PATH = API_DIR / 'gas_outburst.db'
@@ -133,6 +134,134 @@ def get_sensors():
     sensors = [dict(row) for row in cursor.fetchall()]
     conn.close()
     return {"sensors": sensors, "count": len(sensors)}
+
+@app.get("/api/sensors/latest")
+def get_sensors_latest():
+    global data_cursor
+    
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('SELECT DISTINCT timestamp FROM dynamic_sensor_data ORDER BY timestamp')
+    all_timestamps = [row['timestamp'] for row in cursor.fetchall()]
+    
+    if not all_timestamps:
+        conn.close()
+        return {"sensors": [], "count": 0}
+    
+    start_offset = 5000
+    if data_cursor >= len(all_timestamps) - start_offset:
+        data_cursor = start_offset
+    
+    if data_cursor == 0:
+        data_cursor = start_offset
+    
+    target_timestamp = all_timestamps[data_cursor]
+    data_cursor += 100
+    
+    cursor.execute('SELECT sensor_id, value, sensor_type FROM dynamic_sensor_data WHERE timestamp = ?', (target_timestamp,))
+    sensor_data = {row['sensor_id']: {'value': row['value'], 'sensor_type': row['sensor_type']} for row in cursor.fetchall()}
+    
+    backup_data = {}
+    for sensor_id in COMPLETE_SENSOR_META.keys():
+        if sensor_id not in sensor_data:
+            cursor.execute('SELECT value, sensor_type, timestamp FROM dynamic_sensor_data WHERE sensor_id = ? ORDER BY ABS(strftime("%s", timestamp) - strftime("%s", ?)) LIMIT 1', (sensor_id, target_timestamp))
+            backup = cursor.fetchone()
+            if backup:
+                backup_data[sensor_id] = {'value': float(backup['value']), 'sensor_type': backup['sensor_type']}
+    
+    conn.close()
+    
+    now = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    
+    result = []
+    for sensor_id, meta_data in COMPLETE_SENSOR_META.items():
+        if sensor_id in sensor_data:
+            raw_value = sensor_data[sensor_id]['value']
+            sensor_type = sensor_data[sensor_id]['sensor_type']
+        elif sensor_id in backup_data:
+            raw_value = backup_data[sensor_id]['value']
+            sensor_type = backup_data[sensor_id]['sensor_type']
+        else:
+            raw_value = None
+            sensor_type = 'B' if sensor_id.startswith('B') else 'A'
+        
+        result.append({
+            'sensor_id': sensor_id,
+            'indicator_name': meta_data['indicator_name'],
+            'spatial_position': meta_data['spatial_position'],
+            'sensor_type': sensor_type,
+            'value': raw_value,
+            'timestamp': now,
+        })
+    
+    return {"sensors": result, "count": len(result)}
+
+COMPLETE_SENSOR_META = {
+    "34A01": {"indicator_name": "甲烷", "spatial_position": "采面切眼侧"},
+    "35A09": {"indicator_name": "甲烷", "spatial_position": "采面回风埋管管道"},
+    "35A10": {"indicator_name": "流量", "spatial_position": "采面回风埋管管道"},
+    "35A11": {"indicator_name": "压力", "spatial_position": "采面回风埋管管道"},
+    "35A12": {"indicator_name": "温度", "spatial_position": "采面回风埋管管道"},
+    "38A01": {"indicator_name": "甲烷", "spatial_position": "采面工作面"},
+    "38A02": {"indicator_name": "粉尘", "spatial_position": "采面"},
+    "38A03": {"indicator_name": "甲烷", "spatial_position": "采面上隅角"},
+    "38A04": {"indicator_name": "氧气", "spatial_position": "采面"},
+    "38A09": {"indicator_name": "二氧化碳", "spatial_position": "面回风巷避险硐室"},
+    "39A01": {"indicator_name": "甲烷", "spatial_position": "采面回风管道"},
+    "39A02": {"indicator_name": "流量", "spatial_position": "采面回风管道"},
+    "39A03": {"indicator_name": "压力", "spatial_position": "采面回风管道"},
+    "39A04": {"indicator_name": "温度", "spatial_position": "采面回风管道"},
+    "39A05": {"indicator_name": "一氧化碳", "spatial_position": "采面回风管道"},
+    "39A07": {"indicator_name": "甲烷", "spatial_position": "采面回风高位钻机"},
+    "39A13": {"indicator_name": "甲烷", "spatial_position": "采面回风"},
+    "39A14": {"indicator_name": "风速", "spatial_position": "采面回风"},
+    "39A15": {"indicator_name": "温度", "spatial_position": "采面回风"},
+    "39A16": {"indicator_name": "一氧化碳", "spatial_position": "采面回风"},
+    "40A05": {"indicator_name": "甲烷", "spatial_position": "采面进风侧"},
+    "40D14": {"indicator_name": "风向", "spatial_position": "采面"},
+    "B01": {"indicator_name": "钻屑量 (S)", "spatial_position": "采面煤壁前方预测钻孔（软分层内，孔深8~10m，距煤壁5m）"},
+    "B02": {"indicator_name": "钻屑量 (S)", "spatial_position": "采面煤壁前方预测钻孔（软分层内，孔深8~10m，距煤壁10m）"},
+    "B03": {"indicator_name": "巷道围岩变形量", "spatial_position": "运输巷超前支护段0~20m（顶板）"},
+    "B04": {"indicator_name": "巷道围岩变形量", "spatial_position": "运输巷超前支护段20~50m（顶板）"},
+    "B05": {"indicator_name": "巷道围岩变形量", "spatial_position": "运输巷超前支护段0~20m（两帮）"},
+    "B06": {"indicator_name": "巷道围岩变形量", "spatial_position": "回风巷超前支护段0~20m（两帮）"},
+    "B07": {"indicator_name": "煤层原始瓦斯压力", "spatial_position": "运输巷原始煤体测压孔（距工作面>100m）"},
+    "B08": {"indicator_name": "煤层原始瓦斯压力", "spatial_position": "回风巷原始煤体测压孔（距工作面>100m）"},
+    "B09": {"indicator_name": "煤层原始瓦斯压力", "spatial_position": "地质构造异常区测压孔"},
+    "B10": {"indicator_name": "煤层瓦斯压力波动趋势", "spatial_position": "运输巷原始煤体测压孔（距工作面>100m）"},
+    "B11": {"indicator_name": "煤层瓦斯压力波动趋势", "spatial_position": "回风巷原始煤体测压孔（距工作面>100m）"},
+    "B12": {"indicator_name": "煤层瓦斯压力波动趋势", "spatial_position": "地质构造异常区测压孔"},
+    "B13": {"indicator_name": "钻孔瓦斯涌出初速度 (q)", "spatial_position": "采面煤壁前方预测钻孔（软分层内，孔深8~10m，封孔后测量）"},
+    "B14": {"indicator_name": "钻屑瓦斯解吸指标 (K₁)", "spatial_position": "采面煤壁前方预测钻孔（取钻屑后立即装入解吸仪测量）"},
+    "B15": {"indicator_name": "瓦斯浓度变化率", "spatial_position": "采面回风"},
+    "B16": {"indicator_name": "瓦斯浓度变化率", "spatial_position": "采面上隅角"},
+    "B17": {"indicator_name": "瓦斯浓度变化率", "spatial_position": "采面回风管道"},
+    "B18": {"indicator_name": "瓦斯涌出量波动系数", "spatial_position": "采面回风管道"},
+    "B19": {"indicator_name": "煤体内部温度变化", "spatial_position": "采面煤壁前方钻孔内"},
+    "B20": {"indicator_name": "微震事件频次", "spatial_position": "运输巷顶板钻孔（深度3m）"},
+    "B21": {"indicator_name": "微震事件频次", "spatial_position": "回风巷顶板钻孔（深度3m）"},
+    "B22": {"indicator_name": "电磁辐射脉冲数", "spatial_position": "工作面煤壁前方5m（移动测点3）"},
+    "B23": {"indicator_name": "电磁辐射脉冲数", "spatial_position": "工作面煤壁前方10m（移动测点4）"},
+    "B24": {"indicator_name": "声发射事件率", "spatial_position": "运输巷底板钻孔（深度5m）"},
+    "B25": {"indicator_name": "声发射事件率", "spatial_position": "回风巷底板钻孔（深度5m）"},
+    "B26": {"indicator_name": "声发射12h偏差值（DA）", "spatial_position": "运输巷底板钻孔（深度5m）"},
+    "B27": {"indicator_name": "声发射13h偏差值（DA）", "spatial_position": "回风巷底板钻孔（深度5m）"},
+    "B28": {"indicator_name": "声发射异常频次（N）", "spatial_position": "运输巷底板钻孔（深度5m）"},
+    "B29": {"indicator_name": "声发射异常频次（N）", "spatial_position": "回风巷底板钻孔（深度5m）"},
+    "B30": {"indicator_name": "微震事件频次", "spatial_position": "运输巷顶板钻孔（深度3m）"},
+    "B31": {"indicator_name": "微震事件频次", "spatial_position": "回风巷顶板钻孔（深度3m）"},
+    "B32": {"indicator_name": "微震事件频次", "spatial_position": "切眼两端顶板钻孔"},
+    "B33": {"indicator_name": "微震事件频次", "spatial_position": "采空区侧巷道顶板钻孔"},
+    "B34": {"indicator_name": "微震事件能量", "spatial_position": "运输巷顶板钻孔（深度3m）"},
+    "B35": {"indicator_name": "微震事件能量", "spatial_position": "回风巷顶板钻孔（深度3m）"},
+    "B36": {"indicator_name": "微震事件能量", "spatial_position": "切眼两端顶板钻孔"},
+    "B37": {"indicator_name": "微震事件能量", "spatial_position": "采空区侧巷道顶板钻孔"},
+    "B38": {"indicator_name": "微震 b 值", "spatial_position": "运输巷顶板钻孔（深度3m）"},
+    "B39": {"indicator_name": "微震 b 值", "spatial_position": "回风巷顶板钻孔（深度3m）"},
+    "B40": {"indicator_name": "微震 b 值", "spatial_position": "切眼两端顶板钻孔"},
+    "B41": {"indicator_name": "微震 b 值", "spatial_position": "采空区侧巷道顶板钻孔"},
+}
 
 @app.get("/api/sensor-data")
 def get_sensor_data(

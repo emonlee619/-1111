@@ -5,15 +5,21 @@ import os
 
 import sys
 from pathlib import Path
-_WARN_DIR = Path(__file__).resolve().parent.parent / "\u9884\u8b66"
-if str(_WARN_DIR) not in sys.path:
-    sys.path.insert(0, str(_WARN_DIR))
-_ABS_DB = str(_WARN_DIR / "outburst_warning.db")
-DB_PATH = _ABS_DB
-GEN_DATA_PATH = '动态数据（物理约束生成）.csv'
-SENSOR_DIR = '动态数据（真实传感器）'
-STATIC_PATH = '虚拟矿井32项静态数据_50条.csv'
-META_PATH = '动态空间数据指标总览.xlsx'
+
+API_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = API_DIR.parent
+DATA_DIR = PROJECT_ROOT / "数据"
+
+if str(DATA_DIR) not in sys.path:
+    sys.path.insert(0, str(DATA_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+DB_PATH = API_DIR / 'outburst_warning.db'
+GEN_DATA_PATH = DATA_DIR / '动态数据（物理约束生成）.csv'
+SENSOR_DIR = DATA_DIR / '动态数据（真实传感器）'
+STATIC_PATH = DATA_DIR / '虚拟矿井32项静态数据_50条.csv'
+META_PATH = DATA_DIR / '动态空间数据指标总览.xlsx'
 
 def compute_static_risk_index(row):
     from 模糊数学评价 import fuzzy_comprehensive_evaluation

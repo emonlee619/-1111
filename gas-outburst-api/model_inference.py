@@ -138,8 +138,11 @@ class OutburstGNN_TFT(nn.Module):
 
 def build_graph_structure():
     import pandas as pd
+    import os
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    meta_path = os.path.join(base_dir, '动态空间数据指标总览.xlsx')
+    project_root = os.path.dirname(base_dir)
+    data_dir = os.path.join(project_root, '数据')
+    meta_path = os.path.join(data_dir, '动态空间数据指标总览.xlsx')
     
     meta_all = pd.read_excel(meta_path)
     meta_all = meta_all.reset_index(drop=True)
@@ -186,11 +189,17 @@ def build_graph_structure():
 def get_sensor_order():
     import os
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    sensor_dir = os.path.join(base_dir, '动态数据（真实传感器）')
-    a_sensor_files = sorted([f for f in os.listdir(sensor_dir) if f.endswith('.db')])
-    a_cols = [f.replace('.db', '') for f in a_sensor_files]
+    project_root = os.path.dirname(base_dir)
+    data_dir = os.path.join(project_root, '数据')
     
-    gen_data_path = os.path.join(base_dir, '动态数据（物理约束生成）.csv')
+    sensor_dir = os.path.join(data_dir, '动态数据（真实传感器）')
+    if os.path.exists(sensor_dir):
+        a_sensor_files = sorted([f for f in os.listdir(sensor_dir) if f.endswith('.db')])
+        a_cols = [f.replace('.db', '') for f in a_sensor_files]
+    else:
+        a_cols = ['34A01', '35A09', '35A10', '35A11', '35A12', '38A01', '38A02', '38A03', '38A04', '38A09', '39A01', '39A02', '39A03', '39A04', '39A05', '39A07', '39A13', '39A14', '39A15', '39A16', '40A05', '40D14']
+    
+    gen_data_path = os.path.join(data_dir, '动态数据（物理约束生成）.csv')
     df_gen = pd.read_csv(gen_data_path)
     b_cols = [c for c in df_gen.columns if c.startswith('B')]
     
@@ -243,7 +252,10 @@ class ModelInference:
         self.model.eval()
         
         print("加载静态属性...")
-        static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '虚拟矿井32项静态数据_50条.csv')
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(base_dir)
+        data_dir = os.path.join(project_root, '数据')
+        static_path = os.path.join(data_dir, '虚拟矿井32项静态数据_50条.csv')
         static_mine = pd.read_csv(static_path)
         exclude_cols = ['样本编号', '矿井类型', '地质构造类型', '煤层自燃倾向性', 
                         '主通风系统合理性', '矿井瓦斯等级', '风险等级', '红线熔断', '事故严重程度']
@@ -432,7 +444,10 @@ class ModelInference:
         }
     
     def get_static_risk_from_db(self):
-        static_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), '虚拟矿井32项静态数据_50条.csv')
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        project_root = os.path.dirname(base_dir)
+        data_dir = os.path.join(project_root, '数据')
+        static_path = os.path.join(data_dir, '虚拟矿井32项静态数据_50条.csv')
         static_mine = pd.read_csv(static_path)
         actual_index = self.safe_indices[self.current_mine_index]
         row = static_mine.iloc[actual_index]

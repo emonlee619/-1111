@@ -1,5 +1,5 @@
-import { KnowledgeWorkspace } from "@/components/knowledge/KnowledgeWorkspace";
+import { KnowledgeStage3Client } from "@/components/knowledge/KnowledgeStage3Client";
 
-export default function Page() {
-  return <KnowledgeWorkspace view="entry" />;
+export default function KnowledgePage() {
+  return <KnowledgeStage3Client mode="overview" />;
 }

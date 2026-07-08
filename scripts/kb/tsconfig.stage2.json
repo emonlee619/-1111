@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "lib": ["es2022", "dom"],
+    "typeRoots": ["../../frontend/frontend/node_modules/@types"],
+    "types": ["node"]
+  },
+  "include": [
+    "./stage2-common.ts",
+    "./import-source-documents.ts",
+    "./chunk-documents.ts",
+    "./extract-knowledge-cards.ts",
+    "./generate-embeddings.ts",
+    "./import-knowledge-relations.ts",
+    "./seed-core-knowledge.ts"
+  ]
+}

@@ -8,6 +8,19 @@ from typing import Optional, List, Dict, Any
 from apscheduler.schedulers.background import BackgroundScheduler
 import time
 import logging
+import os, sys
+from pathlib import Path
+from dotenv import load_dotenv
+from datetime import datetime
+
+API_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = API_DIR.parent
+DATA_DIR = PROJECT_ROOT / "数据"
+if str(DATA_DIR) not in sys.path:
+    sys.path.insert(0, str(DATA_DIR))
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+load_dotenv(PROJECT_ROOT / ".env")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -34,7 +47,8 @@ is_auto_running = False
 current_cycle_index = 0
 total_cycles = 0
 
-DB_PATH = 'outburst_warning.db'
+DB_PATH = API_DIR / 'outburst_warning.db'
+GAS_OUTBURST_DB_PATH = API_DIR / 'gas_outburst.db'
 
 class SensorDataRequest(BaseModel):
     sensor_id: Optional[str] = None

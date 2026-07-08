@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "src/types/kb.ts",
+    "src/lib/kb/**/*.ts",
+    "src/lib/kbSupabaseRest.ts",
+    "src/app/api/kb/**/*.ts",
+    "src/components/knowledge/Kb*.tsx",
+    "src/components/knowledge/KnowledgeStage3CenterClient.tsx",
+    "src/app/knowledge/center/page.tsx"
+  ],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "incremental": false,
+    "noEmit": true
+  }
+}

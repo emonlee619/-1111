@@ -1,5 +1,5 @@
-import { KnowledgeCenterClient } from "@/components/knowledge/KnowledgeCenterClient";
+import { KnowledgeStage3CenterClient } from "@/components/knowledge/KnowledgeStage3CenterClient";
 
 export default function KnowledgeCenterPage() {
-  return <KnowledgeCenterClient />;
+  return <KnowledgeStage3CenterClient />;
 }

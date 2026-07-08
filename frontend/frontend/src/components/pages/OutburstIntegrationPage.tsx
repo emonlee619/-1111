@@ -1,5 +1,7 @@
 "use client";
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { Activity, AlertTriangle, Database, Play, Server } from "lucide-react";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {

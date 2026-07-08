@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { ChevronDown, ChevronUp, Save, RotateCcw, AlertTriangle } from "lucide-react";
 
 export interface StaticMineData {
@@ -137,7 +137,6 @@ export function StaticDataPanel() {
   const [originalData, setOriginalData] = useState<StaticMineData>(MOCK_STATIC_DATA);
   const [editingKey, setEditingKey] = useState<keyof StaticMineData | null>(null);
   const [editValue, setEditValue] = useState("");
-  const [hasChanges, setHasChanges] = useState(false);
 
   useEffect(() => {
     fetch("/api/outburst/static-data")
@@ -196,12 +195,11 @@ export function StaticDataPanel() {
       });
   }, []);
 
-  useEffect(() => {
-    const changes = Object.keys(data).some((key) => {
+  const hasChanges = useMemo(() => {
+    return Object.keys(data).some((key) => {
       const k = key as keyof StaticMineData;
       return data[k] !== originalData[k];
     });
-    setHasChanges(changes);
   }, [data, originalData]);
 
   const handleEditStart = (key: keyof StaticMineData) => {
@@ -232,14 +230,12 @@ export function StaticDataPanel() {
       .then(res => res.json())
       .then(() => {
         setOriginalData(data);
-        setHasChanges(false);
       })
       .catch(err => console.error("Save failed:", err));
   };
 
   const handleReset = () => {
     setData(originalData);
-    setHasChanges(false);
   };
 
   return (

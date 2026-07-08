@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line } from "recharts";
-import { fetchOutburstWarnings, fetchOutburstStats, type OutburstWarning, type OutburstStats } from "@/lib/outburstApi";
+import { fetchOutburstWarnings, type OutburstWarning } from "@/lib/outburstApi";
 
 interface RiskItem {
   id: string;
@@ -15,23 +15,10 @@ interface RiskItem {
   updatedAt: string;
 }
 
-interface HazardItem {
-  id: string;
-  location: string;
-  type: string;
-  level: string;
-  foundAt: string;
-  reporter: string;
-  owner: string;
-  deadline: string;
-  status: string;
-}
-
 const COLORS = ["#ef4444", "#f97316", "#f59e0b", "#3b82f6"];
 
 export function DoublePreventionDashboard() {
   const [warnings, setWarnings] = useState<OutburstWarning[]>([]);
-  const [stats, setStats] = useState<OutburstStats | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [selectedRisk, setSelectedRisk] = useState<RiskItem | null>(null);
@@ -42,13 +29,8 @@ export function DoublePreventionDashboard() {
         setLoading(true);
         setError(null);
         
-        const [warningList, statData] = await Promise.all([
-          fetchOutburstWarnings(50),
-          fetchOutburstStats(),
-        ]);
-        
+        const warningList = await fetchOutburstWarnings(50);
         setWarnings(warningList);
-        setStats(statData);
       } catch (err) {
         setError(err instanceof Error ? err.message : "加载失败");
       } finally {
@@ -72,18 +54,6 @@ export function DoublePreventionDashboard() {
     updatedAt: w.timestamp,
   }));
 
-  const hazardItems: HazardItem[] = warnings.filter(w => w.combined_risk > 0.5).map((w, index) => ({
-    id: `H${String(index + 1).padStart(4, "0")}`,
-    location: w.mine_id === "M001" ? "1213采掘工作面" : "西翼运输巷",
-    type: w.dynamic_risk > 0.7 ? "瓦斯" : "通风",
-    level: w.risk_level,
-    foundAt: w.timestamp,
-    reporter: "安全巡检员",
-    owner: "采掘队队长",
-    deadline: "2026-07-10",
-    status: Math.random() > 0.5 ? "整改中" : "未整改",
-  }));
-
   const riskCount = riskItems.length;
   const majorRiskCount = riskItems.filter(r => r.level === "重大").length;
   const largerRiskCount = riskItems.filter(r => r.level === "较大").length;
@@ -93,8 +63,8 @@ export function DoublePreventionDashboard() {
   const regionData = [
     { name: "中部采掘区", value: riskItems.filter(r => r.region === "中部采掘区").length },
     { name: "东翼回风巷", value: riskItems.filter(r => r.region === "东翼回风巷").length },
-    { name: "西翼运输巷", value: Math.floor(Math.random() * 5) + 2 },
-    { name: "主斜井", value: Math.floor(Math.random() * 3) + 1 },
+    { name: "西翼运输巷", value: warnings.filter(w => w.combined_risk > 0.5).length },
+    { name: "主斜井", value: warnings.filter(w => w.static_risk > 0.5).length },
   ];
 
   const riskLevelData = [
@@ -106,7 +76,7 @@ export function DoublePreventionDashboard() {
 
   const trendData = Array.from({ length: 12 }, (_, i) => ({
     month: `${i + 1}月`,
-    value: 0.3 + Math.sin(i * 0.5) * 0.2 + Math.random() * 0.2,
+    value: warnings[i]?.combined_risk ?? Math.max(0, 0.3 + Math.sin(i * 0.5) * 0.2),
   }));
 
   if (loading) {

@@ -19,6 +19,11 @@ const adviceBySource: Record<OutburstSourceType, string[]> = {
     "组织人工巡检，形成整改任务、责任人、期限和验收记录。",
     "静态风险用于管控优先级和场景修正，不替代实时监测。",
   ],
+  manual_check: [
+    "核对人工巡检记录、现场照片、责任人签认和班组交接。",
+    "将人工确认问题纳入隐患治理闭环并保留复核材料。",
+    "人工巡检结论仍需按制度审核后形成正式处置意见。",
+  ],
   backend_reported: [
     "先补齐 source_type、slot 或 sensor_id。",
     "人工确认数据来源后再选择真实传感器、生成/估计或静态风险模板。",

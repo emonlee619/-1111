@@ -9,7 +9,6 @@ import {
   matchesNavigationGroup,
   navigation,
 } from "@/config/navigation";
-import { mockPlatformSummary } from "@/data/mockDashboard";
 import { cn } from "@/lib/cn";
 
 export function Topbar({ onMenuClick }: { onMenuClick: () => void }) {

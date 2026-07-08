@@ -97,7 +97,7 @@ export function TwinTunnelViewer({ variant = "full" }: { variant?: "full" | "das
   const [selectedHandle, setSelectedHandle] = useState<string>("UPPER_CORNER");
   const [selectedMarker, setSelectedMarker] = useState<string>("RISK-UPPER-CORNER");
   const [loadingState, setLoadingState] = useState("加载三维底模");
-  const [markerProjection, setMarkerProjection] = useState<MarkerProjection[]>([]);
+  const [, setMarkerProjection] = useState<MarkerProjection[]>([]);
 
   const tunnelSensorPoints = useMemo(
     () => twinSensorPoints.filter((item) => item.displayLayer === "ventilation_3d" || item.displayLayer === "pipe_3d"),
@@ -310,20 +310,13 @@ export function TwinTunnelViewer({ variant = "full" }: { variant?: "full" | "das
     const mesh = hits.map((hit) => hit.object).find((object) => object instanceof Mesh && object.name.length > 0) as Mesh | undefined;
     if (!mesh) return;
     const meshName = mesh.name;
-    let handle = meshName.replace("solid_", "");
+    const handle = meshName.replace("solid_", "");
     const knownHandles = [...twinRiskMarkers.map(m => m.relatedHandle), ...twinSensorPoints.flatMap(s => s.relatedHandles)];
     const matchedHandle = knownHandles.find(h => meshName.includes(h)) || handle;
     setSelectedHandle(matchedHandle);
     const linkedRisk = twinRiskMarkers.find((marker) => marker.relatedHandle === matchedHandle);
     if (linkedRisk) setSelectedMarker(linkedRisk.id);
   };
-
-  const markerById = useMemo(() => {
-    const map = new Map<string, TwinSensorPoint | TwinRiskMarker>();
-    tunnelSensorPoints.forEach((item) => map.set(item.id, item));
-    twinRiskMarkers.forEach((item) => map.set(item.id, item));
-    return map;
-  }, [tunnelSensorPoints]);
 
   const isDashboard = variant === "dashboard";
 

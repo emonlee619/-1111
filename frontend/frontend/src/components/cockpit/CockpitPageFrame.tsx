@@ -63,10 +63,9 @@ export function CockpitPageFrame({
   const moduleTitle = cleanDisplayCopy(navigationGroup?.title ?? meta.module);
   const ambientVariant = resolveAmbientVariant(content.path);
 
-  const [currentTime, setCurrentTime] = useState<string>("加载中...");
+  const [currentTime, setCurrentTime] = useState<string>(() => new Date().toLocaleString("zh-CN"));
 
   useEffect(() => {
-    setCurrentTime(new Date().toLocaleString("zh-CN"));
     const timer = setInterval(() => {
       setCurrentTime(new Date().toLocaleString("zh-CN"));
     }, 1000);

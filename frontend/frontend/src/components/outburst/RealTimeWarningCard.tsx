@@ -3,17 +3,7 @@
 import { useEffect, useState } from "react";
 import { AlertTriangle, Clock, Info } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { fetchOutburstLatestWarning, fetchOutburstWarnings, type OutburstWarning } from "@/lib/outburstApi";
-
-interface WarningDetail {
-  risk_level: string;
-  risk_level_code: string;
-  dynamic_risk: number;
-  static_risk: number;
-  combined_risk: number;
-  timestamp: string;
-  sensor_contribution: Array<{ sensor_id: string; contribution: number; rank: number }>;
-}
+import { fetchOutburstLatestWarning, type OutburstWarning } from "@/lib/outburstApi";
 
 function FourColorProgressBar({ value }: { value: number }) {
   const blueWidth = Math.min(value * 100, 30);
@@ -48,7 +38,6 @@ function riskLevelColor(code: string | number): string {
 
 export function RealTimeWarningCard() {
   const [latestWarning, setLatestWarning] = useState<OutburstWarning | null>(null);
-  const [warnings, setWarnings] = useState<OutburstWarning[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showDetail, setShowDetail] = useState(false);
@@ -59,13 +48,8 @@ export function RealTimeWarningCard() {
         setLoading(true);
         setError(null);
         
-        const [latest, warningsResult] = await Promise.all([
-          fetchOutburstLatestWarning(),
-          fetchOutburstWarnings(5),
-        ]);
-        
+        const latest = await fetchOutburstLatestWarning();
         setLatestWarning(latest);
-        setWarnings(warningsResult);
       } catch (err) {
         setError(err instanceof Error ? err.message : "加载失败");
       } finally {

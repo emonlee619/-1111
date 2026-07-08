@@ -44,6 +44,8 @@ neo4j_server/
 *.onnx
 *.glb
 lib/
+!frontend/frontend/src/lib/
+!frontend/frontend/src/lib/**
 PSD源文件/
 参考图/
 动态-6-10.xlsx
